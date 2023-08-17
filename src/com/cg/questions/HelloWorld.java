@@ -18,7 +18,7 @@ public class HelloWorld {
 
 		List<Integer> list = Arrays.asList(1, 2);
 		Stream<Integer> st = list.stream();
-		
+
 		st.filter(x -> x % 2 == 1).forEach(x -> System.out.println(x));
 		st.filter(x -> x % 2 == 0).forEach(x -> System.out.println(x));
 
