@@ -1,6 +1,9 @@
 package com.cg.InterviewPreparation;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class OccurancesOfEachCharacter {
 
@@ -8,12 +11,11 @@ public class OccurancesOfEachCharacter {
 		// TODO Auto-generated method stub
 
 		String str = "rahulrathod";
-		
-		
+
 //		List<String> collect = Arrays.stream(str.split("")).collect(Collectors.toList());
 //		
 //		System.err.println(collect);
-		
+
 		HashMap<Character, Integer> res = new HashMap<>();
 
 		char[] charArray = str.toCharArray();
@@ -30,6 +32,11 @@ public class OccurancesOfEachCharacter {
 		}
 
 		System.out.println(res);
+
+		// In java 8
+
+		Arrays.stream(str.split("")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+				.entrySet().forEach(System.out::println);
 
 	}
 }

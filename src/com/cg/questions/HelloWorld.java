@@ -10,10 +10,15 @@ public class HelloWorld {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
 		HelloWorld.i = HelloWorld.i + 10;
+		
 		HelloWorld obj1 = new HelloWorld();
+		
 		HelloWorld.i = HelloWorld.i + 10;
+		
 		System.out.println(HelloWorld.i);
+		
 		System.out.println(HelloWorld.i);
 
 		List<Integer> list = Arrays.asList(1, 2);

@@ -6,23 +6,22 @@ public class NumbersAndString {
 		// TODO Auto-generated method stub
 
 		String str = "rahul123";
-		String num = "";
-		String str1 = "";
+
+		StringBuilder str2 = new StringBuilder(); // not synchronized | faster | not thread safe
+		StringBuffer numbers = new StringBuffer(); // synchronized
 
 		for (int i = 0; i < str.length(); i++) {
 			if (str.charAt(i) >= 'a' && str.charAt(i) <= 'z') {
-				str1 += str.charAt(i);
+				str2.append(str.charAt(i));
 
 			} else {
-				num += str.charAt(i);
+				numbers.append(str.charAt(i));
 			}
 
 		}
-		
-		System.out.println(str1);
-		System.out.println(num);
-		
-		
+
+		System.out.println(str2);
+		System.out.println(numbers);
 
 	}
 

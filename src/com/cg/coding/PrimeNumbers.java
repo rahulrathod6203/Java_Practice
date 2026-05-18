@@ -1,10 +1,14 @@
 package com.cg.coding;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PrimeNumbers {
 
-	public static String isPrime(int number) {
+	public static boolean checkPrime(int number) {
 
 		boolean prime = true;
+
 		for (int i = 2; i < number; i++) {
 			if (number % i == 0) {
 				prime = false;
@@ -12,17 +16,28 @@ public class PrimeNumbers {
 			}
 		}
 
-		if(prime) {
-			return number + " is a Prime number";
-		}else {
-			return number + " is not a Prime number";
+		if (prime) {
+			return true;
+		} else {
+			return false;
 		}
 
 	}
 
 	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		List<Integer> primeNumbersList=new ArrayList<>();
 
-		System.out.println(PrimeNumbers.isPrime(12));
+		for (int i = 1; i < 100; i++) {
+			if(checkPrime(i)) {
+				primeNumbersList.add(i);
+			}
+			
+		}
+		
+		System.out.println(primeNumbersList);
+
 	}
 
 }

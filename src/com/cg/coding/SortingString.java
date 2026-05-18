@@ -20,6 +20,7 @@ public class SortingString {
 
 		for (int i = 0; i < charArray.length; i++) {
 			for (int j = 0; j < charArray.length; j++) {
+				
 				if (charArray[j] > charArray[i]) {
 					temp = charArray[i];
 					charArray[i] = charArray[j];
@@ -37,6 +38,20 @@ public class SortingString {
 		
 		Arrays.sort(numArray);
 		System.out.println(numArray);
+		
+		
+		Long num=43423423595883L;
+		
+		String longString=Long.toString(num);
+		
+		
+		
+		
+		char[] charArray2 = longString.toCharArray();
+		
+		Arrays.sort(charArray2);
+		
+		System.out.println(charArray2);
 		
 	
 	}

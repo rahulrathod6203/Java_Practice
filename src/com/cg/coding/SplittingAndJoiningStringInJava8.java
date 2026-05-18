@@ -1,6 +1,8 @@
 package com.cg.coding;
 
 import java.util.Arrays;
+import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class SplittingAndJoiningStringInJava8 {
@@ -19,7 +21,11 @@ public class SplittingAndJoiningStringInJava8 {
 		
 		
 
-		System.out.println(sorted);
+		//System.out.println(sorted);
+		
+		Map<String, Long> collect2 = Arrays.stream(str.split("")).collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+		 
+		System.out.println(collect2);
 	}
 
 }
