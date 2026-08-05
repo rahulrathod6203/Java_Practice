@@ -17,16 +17,16 @@ class AdditionDemoTest {
     }
 
     @Test
-    void shouldTestgreaterOfTwoNumbers() {
-        int actual = demo.greaterOfTwoNumbers(10, 20);
+    void shouldTestGreaterOfTwoNumbers() {
         int expected = 20;
+        int actual = demo.greaterOfTwoNumbers(10, 20);
         assertEquals(expected,actual , "The greater number should be 20.");
     }
 
     @Test
     void shouldRetrunFirstNumberWhenItsLargest_1() {
-        int actual = demo.greaterOfTwoNumbers(20, 10);
         int expected = 20;
+        int actual = demo.greaterOfTwoNumbers(20, 10);
         assertEquals(expected,actual , "The greater number should be 20.");
     }
 
@@ -37,7 +37,12 @@ class AdditionDemoTest {
 
     @Test
     void shouldRetrunSecondNumberWhenItsLargest() {
-        assertEquals(30, demo.greaterOfThreeNumbers(13, 30, 19));
+        assertEquals(31, demo.greaterOfThreeNumbers(19, 30, 31));
+    }
+
+    @Test
+    void shouldRetrunSecondNumberWhenItsLargest_1() {
+        assertEquals(30, demo.greaterOfThreeNumbers(19, 30, 13));
     }
 
     @Test
@@ -50,13 +55,19 @@ class AdditionDemoTest {
         assertEquals(30, demo.greaterOfThreeNumbers(19, 30, 30));
         assertEquals(30, demo.greaterOfThreeNumbers(30, 19, 30));
         assertEquals(30, demo.greaterOfThreeNumbers(30, 30, 13));
+        assertEquals(30, demo.greaterOfThreeNumbers(30, 30, 30));
     }
-
 
     @Test
     void shouldHandleNegativeNumbers(){
         assertThrows(IllegalArgumentException.class,
                 () -> demo.greaterOfThreeNumbers(30,-10,20));
+
+        assertThrows(IllegalArgumentException.class,
+                () -> demo.greaterOfThreeNumbers(-3,10,20));
+
+        assertThrows(IllegalArgumentException.class,
+                () -> demo.greaterOfThreeNumbers(30,10,-20));
     }
 
 }
