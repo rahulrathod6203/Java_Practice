@@ -1,14 +1,42 @@
 package com.cg.coding;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class AdditionDemoTest {
+@DisplayName("Demo test class")
+class DemoUtilsTest {
 
-    AdditionDemo demo = new AdditionDemo();
+    DemoUtils demo;
+
+    @BeforeEach
+    void setupBeforeEach() {
+        // Create objects, setup test data
+        //System.out.println("Executed Before each test method in the class!");
+        demo = new DemoUtils();
+    }
+
+    @AfterEach
+    void tearDownAfterEach() {
+        //Release resources, clean up test data
+        //System.out.println("Executed After each test method in the class!");
+    }
+
+    @BeforeAll
+    static void setupBeforeAll() {
+        // get DB connection, connect to remote server
+        // System.out.println("Executed Before all test methods in the class!");
+
+    }
+
+    @AfterAll
+    static void tearDownAfterAll() {
+        // Release DB connections, disconnect from remote servers
+        // System.out.println("Executed After all test methods in the class!");
+    }
 
     @Test
+    @DisplayName("Addition of two integer numbers")
     void shouldTestAdditionOfTwoNumbers() {
         int expected = 15;
         int actual = demo.add(10, 5);
@@ -20,14 +48,14 @@ class AdditionDemoTest {
     void shouldTestGreaterOfTwoNumbers() {
         int expected = 20;
         int actual = demo.greaterOfTwoNumbers(10, 20);
-        assertEquals(expected,actual , "The greater number should be 20.");
+        assertEquals(expected, actual, "The greater number should be 20.");
     }
 
     @Test
     void shouldRetrunFirstNumberWhenItsLargest_1() {
         int expected = 20;
         int actual = demo.greaterOfTwoNumbers(20, 10);
-        assertEquals(expected,actual , "The greater number should be 20.");
+        assertEquals(expected, actual, "The greater number should be 20.");
     }
 
     @Test
@@ -59,15 +87,10 @@ class AdditionDemoTest {
     }
 
     @Test
-    void shouldHandleNegativeNumbers(){
-        assertThrows(IllegalArgumentException.class,
-                () -> demo.greaterOfThreeNumbers(30,-10,20));
-
-        assertThrows(IllegalArgumentException.class,
-                () -> demo.greaterOfThreeNumbers(-3,10,20));
-
-        assertThrows(IllegalArgumentException.class,
-                () -> demo.greaterOfThreeNumbers(30,10,-20));
+    void shouldHandleNegativeNumbers() {
+        assertThrows(IllegalArgumentException.class, () -> demo.greaterOfThreeNumbers(30, -10, 20));
+        assertThrows(IllegalArgumentException.class, () -> demo.greaterOfThreeNumbers(-3, 10, 20));
+        assertThrows(IllegalArgumentException.class, () -> demo.greaterOfThreeNumbers(30, 10, -20));
     }
 
 }
