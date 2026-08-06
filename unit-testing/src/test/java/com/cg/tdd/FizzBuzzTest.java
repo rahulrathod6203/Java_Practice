@@ -1,8 +1,10 @@
-package com.cg.fizzBuzz;
+package com.cg.tdd;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class FizzBuzzTest {
@@ -41,5 +43,13 @@ class FizzBuzzTest {
     void shouldTestNumberNotDivisibleByThreeOrFive(){
         String actual = FizzBuzz.compute(1);
         assertEquals("1",actual);
+    }
+
+    @DisplayName("Test Data from a CSV file")
+    @ParameterizedTest(name = "value={0}, expected={1}")
+    @CsvFileSource(resources = "/small-test-data.csv")
+    @Order(5)
+    void shouldTestDataFromCSVFile(int value, String expected){
+        assertEquals(expected,FizzBuzz.compute(value));
     }
 }

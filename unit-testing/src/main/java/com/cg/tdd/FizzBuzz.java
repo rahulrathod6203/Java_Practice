@@ -1,4 +1,4 @@
-package com.cg.fizzBuzz;
+package com.cg.tdd;
 
 public class FizzBuzz {
 
