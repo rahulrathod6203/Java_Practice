@@ -15,9 +15,15 @@ import javax.swing.*;
 public class CheckLeapYearTest {
 
     @ParameterizedTest
-    @ValueSource(ints = {2024,1600})
-    void shouldReturnTrueIfLeapYear(int year){
+    @ValueSource(ints = {2024, 1600})
+    void shouldReturnTrueIfLeapYear(int year) {
         assertTrue(CheckLeapYear.check(year));
     }
+
+    @Test
+    void shouldReturnFalseIfNotLeapyear() {
+        assertFalse(CheckLeapYear.check(1975));
+    }
+    
 
 }
