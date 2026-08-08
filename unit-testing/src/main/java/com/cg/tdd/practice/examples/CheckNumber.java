@@ -1,4 +1,4 @@
-package com.cg.tdd.practice;
+package com.cg.tdd.practice.examples;
 
 public class CheckNumber {
 

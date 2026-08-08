@@ -1,4 +1,4 @@
-package com.cg.tdd.practice;
+package com.cg.tdd.practice.examples;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

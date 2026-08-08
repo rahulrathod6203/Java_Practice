@@ -1,4 +1,4 @@
-package com.cg.tdd.practice;
+package com.cg.tdd.practice.examples;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;

@@ -1,15 +1,12 @@
-package com.cg.tdd.practice;
+package com.cg.tdd.practice.examples;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-
-import javax.swing.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class CheckLeapYearTest {
