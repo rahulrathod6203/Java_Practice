@@ -128,8 +128,6 @@ class UserServiceImplTest {
         User user = User.builder().id(1L).email("rahul@gmail.com").build();
         when(userRepo.findById(1L)).thenReturn(Optional.empty());
 
-
-
         assertThrows(RuntimeException.class, () ->userService.deleteUserById(1L));
 
         verify(userRepo).findById(1L);
