@@ -32,7 +32,6 @@ class UserServiceImplTest {
     @InjectMocks
     UserServiceImpl userService;
 
-
     @Test
     void shouldReturnUserById() {
 

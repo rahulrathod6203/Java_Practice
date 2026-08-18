@@ -14,7 +14,7 @@ public class DemoUtils {
 
     public int greaterOfThreeNumbers(int a, int b, int c) {
         if(a<=0 || b<=0 || c<=0){
-            throw new IllegalArgumentException("Number cannot be zero or neagtive!!");
+            throw new IllegalArgumentException("Number cannot be zero or negative!!");
         }
         if (a >= b && a >= c) {
             return a;
