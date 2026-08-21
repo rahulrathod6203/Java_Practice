@@ -1,5 +1,7 @@
 package com.cg.tdd;
 
+import com.cg.tdd.practice.fizzbuzz.FizzBuzz;
+
 public class MainApp {
 
     public static void main(String[] args) {
